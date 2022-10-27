@@ -1,22 +1,27 @@
-#include "holberton.h"
-/**
- * _strchr - locates character in string
- * @s: string to locate char
- * @c: character to find
- * Return: character value
- */
-char *_strchr(char *s, char c)
-{
-	int i;
+#include "main.h"
 
-	for (i = 0; s[i] != '\0'; i++)
+/**
+ * _strncpy - copy a string with n
+ * @src: copy from
+ * @dest: copy to
+ * @n: number of char to be copied
+ * Return: dest
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+	int j;
+
+	j = 0;
+	while (j < n && src[j] != '\0')
 	{
-		if (s[i] == c)
-		{
-			return (s + i);
-		}
+		dest[j] = src[j];
+		j++;
 	}
-	if (s[i] == c)
-		return (s + i);
-	return (0);
+	while (j < n)
+	{
+		dest[j] = '\0';
+		j++;
+	}
+
+	return (dest);
 }

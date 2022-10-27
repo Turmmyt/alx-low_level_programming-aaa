@@ -1,22 +1,31 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
- * _strchr - locates character in string
- * @s: string to locate char
- * @c: character to find
- * Return: character value
+ * _strncat - joins two strings with n bytes
+ * @dest: copy to
+ * @src: copy from
+ * @n: number of char to be copied
+ * Return: dest
  */
-char *_strchr(char *s, char c)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i;
+	int j;
 
-	for (i = 0; s[i] != '\0'; i++)
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		if (s[i] == c)
-		{
-			return (s + i);
-		}
+		i++;
 	}
-	if (s[i] == c)
-		return (s + i);
-	return (0);
+	j = 0;
+	while (j < n && src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
+Footer
+© 2022 GitHub, Inc.
